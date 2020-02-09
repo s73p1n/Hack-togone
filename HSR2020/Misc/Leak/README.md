@@ -96,7 +96,7 @@ warning [hsrleak.wav]:  2645804 extra bytes at beginning or within zipfile
 
 And we got the flag.
 
-<img src="./Images/flag.png" width="450" >
+<img src="./Images/flag.png" width="600" >
 
 <br>
 
