@@ -53,7 +53,7 @@ Let's created a ./debug directory to save the decryption attempts with the diffe
 [CTF] $ for i in `ls _private.zip.extracted/private/`; do tshark -2 -r privatehsr2020.pcap -o tls.keys_list:"10.13.13.105","443","http","_private.zip.extracted/private/$i" -o tls.debug_file:"./debug/debug_$i.txt" -V -R http; done
 ```
 
-The private key seems to be the _private.zip.extracted/private/privkey_1609.pem, after a quick search in the decrypted files in the ./debug directory.
+The private key seems to be the _private.zip.extracted/private/privkey_1609.pem, after a quick search in the decrypted files located in the ./debug directory.
 
 ```shell
 [CTF] $ grep --color "HSR" debug/*
