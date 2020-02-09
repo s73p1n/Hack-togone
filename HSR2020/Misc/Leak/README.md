@@ -32,7 +32,7 @@ warning [hsrleak.wav]:  2645804 extra bytes at beginning or within zipfile
 
 It's a protected zip.
 
-Let's make a dictionary attack to try the unprotect the zip.
+Let's make a dictionary attack to try to unprotect the zip.
 
 
 ```shell
