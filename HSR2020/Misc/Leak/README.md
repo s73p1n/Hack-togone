@@ -86,4 +86,4 @@ warning [hsrleak.wav]:  2645804 extra bytes at beginning or within zipfile
   inflating: flag.png 
 ```
 
-<img src="./Images/flag.png" align="left" width="300" >
+<img src="./Images/flag.png" align="left" width="450" >
