@@ -8,7 +8,7 @@ Let's open the network capture with wireshark and have a look at the protocol hi
 
 We can notice important protocol traffic that may have helped for data exiftrations like the 37.7% of DNS traffic and the 62.3% of ICMP traffic.
 
-A quick look at a possible ICMP exfiltration.
+### A quick look at a possible ICMP exfiltration.
 
 ```shell
 [CTF] $ tshark -r double_exfil.pcap -Y 'icmp' -Tfields -e data.data | uniq| cut -b17- | xxd -r -p | base64 -di > icmp.png
@@ -19,7 +19,7 @@ Here is a part of the flag. (The second one)
 <img src="./Images/icmp.png" alt="drawing" width="200"/>
 
 
-The other part may be exfiltrated through DNS queries, let's have quick look at a possible DNS exfiltration with DNScat.
+### The other part may be exfiltrated through DNS queries, let's have quick look at a possible DNS exfiltration with DNScat.
 
 ```shell
 [CTF] $ tshark -r double_exfil.pcap -Y "dns.flags.response == 0" -T fields -e "dns.qry.name" |sed 's/\.exfil\.hacksecureims\.eu//g' |cut -b19- |sed 's/\.//g' |paste -sd" " - |sed 's/ //g' > dns_with_noices.hex

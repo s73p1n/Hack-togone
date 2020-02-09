@@ -9,6 +9,7 @@ Let's open the network capture with wireshark and have a look at the protocol hi
 We can notice important protocol traffic that may have helped for data exiftrations like the 27.7% of FTP-data, the 6.9% of FTP traffic, the 22% of ICMP traffic and some encrypted TLSv1.2 traffics.
 
 A quick look at a possible ICMP exfiltration.
+
 ```shell
 [CTF] $ tshark -r privatehsr2020.pcap -Y 'icmp' -Tfields -e data.data | uniq | xxd -r -p
 ```
