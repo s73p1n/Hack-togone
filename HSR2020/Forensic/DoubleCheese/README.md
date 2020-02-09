@@ -10,9 +10,13 @@ We can notice important protocol traffic that may have helped for data exiftrati
 
 ### A quick look at a possible ICMP exfiltration.
 
+
 ```shell
-[CTF] $ tshark -r double_exfil.pcap -Y 'icmp' -Tfields -e data.data | uniq| cut -b17- | xxd -r -p | base64 -di > icmp.png
+[CTF] $ tshark -r double_exfil.pcap -Y 'icmp' -Tfields -e data.data | uniq | cut -b17- | xxd -r -p | base64 -di > icmp.png
 ```
+
+Note : I've cut each line's 16 first characters (cut -b17-) which correspond to noises amoung the exfiltrated data.<br>
+This noises can be noticed with ease while inspecting hexadecimals exfiltrated data.
 
 Here is a part of the flag. (The second one)
 
@@ -22,10 +26,14 @@ Here is a part of the flag. (The second one)
 ### The other part may be exfiltrated through DNS queries, let's have quick look at a possible DNS exfiltration with DNScat.
 
 ```shell
-[CTF] $ tshark -r double_exfil.pcap -Y "dns.flags.response == 0" -T fields -e "dns.qry.name" |sed 's/\.exfil\.hacksecureims\.eu//g' |cut -b19- |sed 's/\.//g' |paste -sd" " - |sed 's/ //g' > dns_with_noices.hex
+[CTF] $ tshark -r double_exfil.pcap -Y "dns.flags.response == 0" -T fields -e "dns.qry.name" | sed 's/\.exfil\.hacksecureims\.eu//g' | cut -b19- |sed 's/\.//g' | paste -sd" " - | sed 's/ //g' > dns_with_noises.hex
 ```
 
-I have opened the dns_with_noices.hex file with vim and have deleted the 50 first characters in order to have the correct PNG magic number.
+Note : I've cut each line's 16 first characters (cut -b19-) which correspond to noises amoung the exfiltrated data.<br>
+This noises can be noticed with ease while inspecting hexadecimals exfiltrated data.<br><br>
+
+
+I have opened the dns_with_noises.hex file with vim and have deleted the 50 first characters in order to have the correct PNG magic number.
 The new file created is dns.hex
 
 ```shell 
