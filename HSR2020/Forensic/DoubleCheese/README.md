@@ -40,5 +40,5 @@ Here is the other part of the flag. (The first one)
 
 Here is the full flag.
 
-<img src="./Images/dns.png" align="left" width="200" >
-<img src="./Images/icmp.png" align="left" width="200" >
+<img src="./Images/dns.png" align="left" width="300" >
+<img src="./Images/icmp.png" align="left" width="300" >
