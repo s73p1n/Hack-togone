@@ -1,4 +1,4 @@
-# HackSecuReims 2020
+# HackSécuReims 2020
 
 The HSR is a CTF on site made for students in the Reims Champagne-Ardenne University.
 
