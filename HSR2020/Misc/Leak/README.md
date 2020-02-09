@@ -9,7 +9,7 @@ Knowing that it was a WAVE audio, I launched the Sonic Visualiser and opened the
 ![Image](./Images/hsrleak_spectogram.png)
 
 We could clear see a pastebin link (hxxps://pastebin.com/VRAKUxT9) which contains some facebook account emails and passwords.
-The pastebin lastely modified in 2017. 
+The pastebin was lastely modified in 2017. 
 
 So it seems like those passwords could be helpful for something. I went back to the audio file to see all contained strings.
 
