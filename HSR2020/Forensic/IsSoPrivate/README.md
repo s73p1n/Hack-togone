@@ -42,7 +42,7 @@ The private.zip file seems damaged and not protected. Let's extract its content 
 ```shell
 [CTF] $ binwalk -e private.zip
 ```
-Extracted file are created in the ./_private.zip.extracted/private/ directory.
+Extracted files are created in the ./_private.zip.extracted/private/ directory.
 
 Great. We've got some privated keys but too much to be able to try them one by one with wireshark.
 Let's play with our beloved tshark and automate the given network capture TLS encrypted conversation decryption.
@@ -69,7 +69,7 @@ debug/debug_privkey_1609.pem.txt:| 20 48 53 52 7b 46 54 50 73 5f 31 73 5f 6d 30 
 [CTF] $ cat debug/debug_privkey_1609.pem.txt
 ```
 
-The debug/debug_privkey_1609.pem.txt file contain a html page that display the flag.
+The debug/debug_privkey_1609.pem.txt file contain an html page that display the flag.
 
 
 ```html
