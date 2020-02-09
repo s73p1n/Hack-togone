@@ -26,17 +26,17 @@ Here is a part of the flag. (The second one)
 ![Image](./Images/icmp.png)
 
 
-The other part may be exfiltrated through DNS queries, let's have quick look at a possible DNS exfiltration.
+The other part may be exfiltrated through DNS queries, let's have quick look at a possible DNS exfiltration with DNScat.
 
 ```shell
-[CTF] $ tshark -r double_exfil.pcap -Y "dns.flags.response == 0" -T fields -e "dns.qry.name" |sed 's/\.exfil\.hacksecureims\.eu//g' |cut -b19- |sed 's/\.//g' |paste -sd" " - |sed 's/ //g' > dns_with_noices.b64
+[CTF] $ tshark -r double_exfil.pcap -Y "dns.flags.response == 0" -T fields -e "dns.qry.name" |sed 's/\.exfil\.hacksecureims\.eu//g' |cut -b19- |sed 's/\.//g' |paste -sd" " - |sed 's/ //g' > dns_with_noices.hex
 ```
 
-I have opened the dns_with_noices.b64 file with vim and have deleted all lines' 18 first characters, which representes noices in the DNS exfiltration made certainly with DNScat.
-The new file created is dns.b64
+I have opened the dns_with_noices.hex file with vim and have deleted the 50 first characters in order to have the correct PNG magic number.
+The new file created is dns.hex
 
 ```shell 
-[CTF] $ cat dns.b64 | base64 -di > dns.png
+[CTF] $ cat dns.hex | xxd -r -p > dns.png
 [CTF] $ pngcheck -vt7f dns.png
 ```
 
