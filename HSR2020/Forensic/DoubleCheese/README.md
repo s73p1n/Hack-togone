@@ -16,7 +16,7 @@ A quick look at a possible ICMP exfiltration.
 
 Here is a part of the flag. (The second one)
 
-<img src="./Images/icmp.png" alt="drawing" width="500"/>
+<img src="./Images/icmp.png" alt="drawing" width="200"/>
 
 
 The other part may be exfiltrated through DNS queries, let's have quick look at a possible DNS exfiltration with DNScat.
@@ -35,7 +35,7 @@ The new file created is dns.hex
 
 Here is the other part of the flag. (The first one)
 
-<img src="./Images/dns.png" alt="drawing" width="500"/>
+<img src="./Images/dns.png" alt="drawing" width="200"/>
 
 
 
