@@ -1,7 +1,7 @@
 # Leak : 125 points
 
 Unfortunatly, I don't have the challenge description but it was something like : 
-..* "We heard that someone have found a new way of exchanging informations. Find what have been leaked."
+"We heard that someone have found a new way of exchanging informations. Find what have been leaked."
 and the file hsleak.wav was given.
 
 Knowing that it was a WAVE audio, I launched the Sonic Visualiser and opened the hsleak.wav file to see the audio spectogram.
