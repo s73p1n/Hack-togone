@@ -29,7 +29,7 @@ Here is a part of the flag. (The second one)
 [CTF] $ tshark -r double_exfil.pcap -Y "dns.flags.response == 0" -T fields -e "dns.qry.name" | sed 's/\.exfil\.hacksecureims\.eu//g' | cut -b19- |sed 's/\.//g' | paste -sd" " - | sed 's/ //g' > dns_with_noises.hex
 ```
 
-Note : I've cut each line's 16 first characters (cut -b19-) which correspond to noises amoung the exfiltrated data.<br>
+Note : I've cut each line's 18 first characters (cut -b19-) which correspond to noises amoung the exfiltrated data.<br>
 This noises can be noticed with ease while inspecting hexadecimals exfiltrated data.<br><br>
 
 
