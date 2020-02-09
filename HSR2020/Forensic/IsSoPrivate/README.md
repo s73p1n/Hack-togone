@@ -21,8 +21,8 @@ Note : I've seen an URCACTF{Just_ServerName_for_FTP_!!!} but this year for a 250
 ![Image](./Images/ftp_stream.png)
 
 Now, let's have a look at the FTP-data traffic. 5338453 bytes have been transfered from 10.13.13.105 to 10.13.13.103.
-And we can see some path and a "PK" string in the ascii content of the ftp-data flow stream. 
-It's certainly the private.zip file. Let's save its the binary content through wireshark.
+And we can see some paths and a "PK" string in the ascii content of the ftp-data flow stream. 
+It's certainly the private.zip file. Let's save its binary content through wireshark.
 
 ![Image](./Images/ftp-data_stream.png)
 
