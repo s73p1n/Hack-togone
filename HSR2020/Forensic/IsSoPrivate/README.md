@@ -41,10 +41,11 @@ The private.zip file seems damaged and not protected. Let's extract its content 
 
 ```shell
 [CTF] $ binwalk -e private.zip
+[CTF] $ 
 ```
 Extracted files are created in the ./_private.zip.extracted/private/ directory.
 
-Great. We've got some privated keys but too much to be able to try them one by one with wireshark.
+Great. We've got some privated keys in pem format. There are too much of them to be able to try them one by one with wireshark.
 Let's play with our beloved tshark and automate the given network capture TLS encrypted conversation decryption.
 
 Let's created a ./debug directory to save the decryption attempts with the different keys.
