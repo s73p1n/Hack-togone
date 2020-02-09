@@ -2,7 +2,7 @@
 
 The HSR is a CTF onsite made for students in the Reims Champagne-Ardenne University.
 
-<img src="./Images/hsr2020.svg" align="left" width="450" >
+<img src="./Images/hsr2020.png" align="left" width="450" >
 
 ### Other WU :
 
