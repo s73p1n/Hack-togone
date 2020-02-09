@@ -16,7 +16,7 @@ Nothing special.
 
 FTP traffic garther some informations about an FTP connection and a retrieved file named private.zip which a size of 5338453 bytes.
 
-Note : I've seen an URCACTF{Just_ServerName_for_FTP_!!!} but this year for a 250 points challenge it would have been too easy and the format for the HSR2020 ctf was "HSR{s0m3th1ng}"
+Note : I've seen an URCACTF{Just_ServerName_for_FTP_!!!} but for a 250 points challenge it would have been too easy and this year ctf flag format was "HSR{s0m3th1ng}"
 
 ![Image](./Images/ftp_stream.png)
 
