@@ -37,7 +37,7 @@ unzip:  cannot find zipfile directory in one of private.zip or
         private.zip.zip, and cannot find private.zip.ZIP, period.
 ```
 
-The private.zip file seems damaged and not protected. Let's extract it's content with binwalk.
+The private.zip file seems damaged and not protected. Let's extract its content with binwalk.
 
 ```shell
 [CTF] $ binwalk -e private.zip
