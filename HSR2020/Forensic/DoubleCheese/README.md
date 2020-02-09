@@ -9,16 +9,9 @@ Let's open the network capture with wireshark and have a look at the protocol hi
 We can notice important protocol traffic that may have helped for data exiftrations like the 37.7% of DNS traffic and the 62.3% of ICMP traffic.
 
 A quick look at a possible ICMP exfiltration.
+
 ```shell
-[CTF] $ tshark -r double_exfil.pcap -Y 'icmp' -Tfields -e data.data | uniq | xxd -r -p > icmp_with_noices.b64
-```
-
-I have opened the icmp_with_noices.b64 file with vim and have deleted all lines' 16 first characters, which representes noices in the ICMP exfiltration.
-The new file created is icmp.b64
-
-```shell 
-[CTF] $ cat icmp.b64 | base64 -di > icmp.png
-[CTF] $ pngcheck -vt7f icmp.png
+[CTF] $ tshark -r double_exfil.pcap -Y 'icmp' -Tfields -e data.data | uniq| cut -b17- | xxd -r -p | base64 -di > icmp.png
 ```
 
 Here is a part of the flag. (The second one)
