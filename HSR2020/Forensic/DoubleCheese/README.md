@@ -29,7 +29,7 @@ Here is a part of the flag. (The second one)
 The other part may be exfiltrated through DNS queries, let's have quick look at a possible DNS exfiltration.
 
 ```shell
-[CTF] $ tshark -r double_exfil.pcap -Y 'dns' -Tfields -e dns.qry.name | uniq | tr -d ".exfil.hacksecureims.eu" > dns_with_noices.b64
+[CTF] $ tshark -r double_exfil.pcap -Y "dns.flags.response == 0" -T fields -e "dns.qry.name" |sed 's/\.exfil\.hacksecureims\.eu//g' |cut -b19- |sed 's/\.//g' |paste -sd" " - |sed 's/ //g' > dns_with_noices.b64
 ```
 
 I have opened the dns_with_noices.b64 file with vim and have deleted all lines' 18 first characters, which representes noices in the DNS exfiltration made certainly with DNScat.
