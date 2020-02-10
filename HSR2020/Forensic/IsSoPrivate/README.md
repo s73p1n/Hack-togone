@@ -44,7 +44,6 @@ unzip:  cannot find zipfile directory in one of private.zip or
 
 ```shell
 [CTF] $ binwalk -e private.zip
-[CTF] $ 
 ```
 Extracted files are created in the ./_private.zip.extracted/private/ directory.
 
