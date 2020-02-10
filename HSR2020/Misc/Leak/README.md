@@ -41,7 +41,7 @@ Let's make a dictionary attack to try to unprotect the zip.
 [CTF] (~/HSR/) $ zip2john hsrleak.wav > breakme
 ```
 
-#### Break the zip password
+#### Breaking the zip password
 
 First of all, I've choosed the classic way and tried to break the protected zip with the rockyou dictionary.
 

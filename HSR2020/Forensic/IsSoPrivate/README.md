@@ -8,7 +8,7 @@ Let's open the network capture with wireshark and have a look at the protocol hi
 
 We can notice important protocol traffic that may have helped for data exiftrations like the 27.7% of FTP-data, the 6.9% of FTP traffic, the 22% of ICMP traffic and some encrypted TLSv1.2 traffics.
 
-A quick look at a possible ICMP exfiltration.
+ ### A quick look at a possible ICMP exfiltration.
 
 ```shell
 [CTF] $ tshark -r privatehsr2020.pcap -Y 'icmp' -Tfields -e data.data | uniq | xxd -r -p
@@ -21,7 +21,9 @@ Note : I've seen an URCACTF{Just_ServerName_for_FTP_!!!} but for a 250 points ch
 
 ![Image](./Images/ftp_stream.png)
 
-Now, let's have a look at the FTP-data traffic. 5338453 bytes have been transfered from 10.13.13.105 to 10.13.13.103.
+### Now, let's have a look at the FTP-data traffic.
+
+5338453 bytes have been transfered from 10.13.13.105 to 10.13.13.103.
 And we can see some paths and a "PK" string in the ascii content of the ftp-data flow stream. 
 It's certainly the private.zip file. Let's save its binary content through wireshark.
 
@@ -38,7 +40,7 @@ unzip:  cannot find zipfile directory in one of private.zip or
         private.zip.zip, and cannot find private.zip.ZIP, period.
 ```
 
-The private.zip file seems damaged and not protected. Let's extract its content with binwalk.
+### The private.zip file seems damaged and not protected. Let's extract its content with binwalk.
 
 ```shell
 [CTF] $ binwalk -e private.zip
@@ -55,7 +57,9 @@ Let's created a ./debug directory to save the decryption attempts with the diffe
 [CTF] $ for i in `ls _private.zip.extracted/private/`; do tshark -2 -r privatehsr2020.pcap -o tls.keys_list:"10.13.13.105","443","http","_private.zip.extracted/private/$i" -o tls.debug_file:"./debug/debug_$i.txt" -V -R http; done
 ```
 
-The private key seems to be the _private.zip.extracted/private/privkey_1609.pem, after a quick search in the decrypted files located in the ./debug directory.
+### The private key seems to be the _private.zip.extracted/private/privkey_1609.pem.
+
+After a quick search in the decrypted files located in the ./debug directory.
 
 ```shell
 [CTF] $ grep --color "HSR" debug/*
