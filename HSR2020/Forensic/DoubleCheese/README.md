@@ -48,8 +48,13 @@ Here is the other part of the flag. (The first one)
 
 Here is the full flag.
 
+<br>
 <img src="./Images/dns.png" align="left" width="300" >
 <img src="./Images/icmp.png" align="left" width="300" >
+<br/>
+
+
+<br> Thanks to [m4khno](https://twitter.com/m4khno_) for this great challenge. <br/>
 
 <br>
 
